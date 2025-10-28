@@ -1,47 +1,87 @@
-/* Google font används via länken i <head> */
+/* Base Styles */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: #f8f8f8;
   margin: 0;
   padding: 0;
   color: #333;
 }
 
+/* Header Styles */
 header {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
 }
 
+/* Logo Styles */
+#logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+
+/* Nav Styles */
 nav ul {
   list-style: none;
+  margin: 0;
   padding: 0;
+  display: flex;
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+  margin-left: 20px;
 }
 
 nav ul li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 nav ul li a.active {
   border-bottom: 2px solid #fff;
 }
 
+/* Main Content */
 main {
   padding: 2rem;
   text-align: center;
 }
 
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Footer */
 footer {
-  background: #333;
+  background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 1rem 0;
-  position: relative;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #4da3ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
