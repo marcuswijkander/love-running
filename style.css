@@ -1,7 +1,7 @@
 /* === GOOGLE FONTS === */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Oswald:wght@400&display=swap');
 
-/* === BASE STYLES === */
+/* === BASE === */
 body {
   font-family: 'Lato', sans-serif;
   color: #3a3a3a;
@@ -12,15 +12,15 @@ body {
 /* === HEADER === */
 header {
   background-color: #ffffff;
-  padding: 0 20px;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 99;
   box-shadow: 0 2px 4px #3a3a3a;
-  display: grid;
-  grid-template-columns: 50px 1fr 50px; /* ☰ | LOGO | tom yta */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -30,33 +30,29 @@ header {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #252525;
-  margin: 10px 0;
+  margin: 0;
   text-align: center;
 }
 
-/* Centrera loggalänken i mittenkolumnen */
+/* Centrera länken i headern */
 header > a {
-  grid-column: 2;
-  justify-self: center;
-  text-align: center;
   text-decoration: none;
   color: inherit;
+  flex-grow: 1;
+  text-align: center;
 }
 
-/* === HIDING CHECKBOX === */
+/* === HAMBURGER === */
 #nav-toggle {
   display: none;
 }
 
-/* === MENU TOGGLE LABEL (☰) === */
 .nav-toggle-label {
   font-size: 1.8rem;
   cursor: pointer;
   user-select: none;
   color: #252525;
   padding: 10px;
-  grid-column: 1;
-  justify-self: start;
 }
 
 /* === NAV MENU === */
@@ -72,15 +68,13 @@ nav {
 }
 
 #menu {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 110%;
-  letter-spacing: 1px;
 }
 
 #menu li {
-  margin-bottom: 1em;
+  margin: 1em 0;
 }
 
 #menu a {
@@ -93,16 +87,16 @@ nav {
   border-bottom: 1px solid #3a3a3a;
 }
 
-/* === WHEN CHECKED, SHOW MENU === */
+/* Visa meny när box är checked */
 #nav-toggle:checked ~ nav {
   display: block;
 }
 
-/* === MAIN CONTENT === */
+/* === MAIN === */
 main {
-  margin-top: 80px; /* Flytta ner sidan under headern */
-  padding: 20px;
+  margin-top: 90px;
   text-align: center;
+  padding: 20px;
 }
 
 /* === FOOTER === */
@@ -113,24 +107,19 @@ footer {
   margin-top: 40px;
 }
 
-/* === OPTIONAL: MAKE LINKS NICER ON HOVER === */
-a:hover {
-  opacity: 0.7;
-  transition: 0.3s;
-}
-
-/* === DESKTOP VIEW === */
+/* === DESKTOP === */
 @media screen and (min-width: 768px) {
-  /* Dölj hamburgarikonen */
   .nav-toggle-label {
     display: none;
   }
 
-  /* Visa meny i linje */
+  header {
+    flex-direction: column;
+  }
+
   nav {
     position: static;
-    display: flex;
-    justify-content: center;
+    display: block;
     box-shadow: none;
     background: none;
   }
@@ -139,14 +128,10 @@ a:hover {
     display: flex;
     justify-content: center;
     gap: 2em;
-    align-items: center;
   }
 
   #menu li {
-    margin-bottom: 0;
-  }
-
-  #menu a.active {
-    border-bottom: 2px solid #3a3a3a;
+    margin: 0;
   }
 }
+
