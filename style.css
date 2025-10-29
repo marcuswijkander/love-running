@@ -19,8 +19,8 @@ header {
   width: 100%;
   z-index: 99;
   box-shadow: 0 2px 4px #3a3a3a;
-  display: flex;
-  justify-content: center; /* Centrera loggan */
+  display: grid;
+  grid-template-columns: 50px 1fr 50px; /* tre kolumner: meny, logga, tom plats */
   align-items: center;
 }
 
