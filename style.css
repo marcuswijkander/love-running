@@ -31,6 +31,16 @@ header {
   letter-spacing: 2px;
   color: #252525;
   margin: 10px 0;
+  text-align: center;
+}
+
+/* Centrera loggalänken i mittenkolumnen */
+header > a {
+  grid-column: 2;
+  justify-self: center;
+  text-align: center;
+  text-decoration: none; /* ta bort länkstil */
+  color: inherit;
 }
 
 /* === HIDING CHECKBOX === */
@@ -45,9 +55,8 @@ header {
   user-select: none;
   color: #252525;
   padding: 10px;
-  position: absolute;
-  left: 15px;
-  top: 10px;
+  grid-column: 1; /* placera i första kolumnen */
+  justify-self: start;
 }
 
 /* === NAV MENU === */
