@@ -20,7 +20,7 @@ header {
   z-index: 99;
   box-shadow: 0 2px 4px #3a3a3a;
   display: grid;
-  grid-template-columns: 50px 1fr 50px; /* tre kolumner: meny, logga, tom plats */
+  grid-template-columns: 50px 1fr 50px; /* ☰ | LOGO | tom yta */
   align-items: center;
 }
 
