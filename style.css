@@ -38,6 +38,15 @@ header {
   display: none;
 }
 
+/* === LABEL FOR MENU TOGGLE === */
+.nav-toggle-label {
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+  color: #252525;
+  padding: 10px;
+}
+
 /* === NAV MENU === */
 nav {
   position: absolute;
@@ -70,13 +79,6 @@ nav {
 
 #menu a.active {
   border-bottom: 1px solid #3a3a3a;
-}
-
-/* === LABEL FOR MENU TOGGLE === */
-.nav-toggle-label {
-  font-size: 1.8rem;
-  cursor: pointer;
-  user-select: none;
 }
 
 /* === WHEN CHECKED, SHOW MENU === */
