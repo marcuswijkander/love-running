@@ -20,8 +20,8 @@ header {
   z-index: 99;
   box-shadow: 0 2px 4px #3a3a3a;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  justify-content: center; /* Centrera loggan */
+  align-items: center;
 }
 
 /* === LOGO === */
@@ -38,13 +38,16 @@ header {
   display: none;
 }
 
-/* === LABEL FOR MENU TOGGLE === */
+/* === MENU TOGGLE LABEL (☰) === */
 .nav-toggle-label {
   font-size: 1.8rem;
   cursor: pointer;
   user-select: none;
   color: #252525;
   padding: 10px;
+  position: absolute;
+  left: 15px;
+  top: 10px;
 }
 
 /* === NAV MENU === */
@@ -86,9 +89,9 @@ nav {
   display: block;
 }
 
-/* === MAIN === */
+/* === MAIN CONTENT === */
 main {
-  margin-top: 80px;
+  margin-top: 80px; /* Flytta ner sidan under headern */
   padding: 20px;
   text-align: center;
 }
@@ -99,4 +102,34 @@ footer {
   padding: 20px;
   background-color: #f5f5f5;
   margin-top: 40px;
+}
+
+/* === OPTIONAL: MAKE LINKS NICER ON HOVER === */
+a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+/* === OPTIONAL: SMALLER SCREENS === */
+@media screen and (min-width: 768px) {
+  /* Desktop: visa meny alltid */
+  .nav-toggle-label {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    display: block;
+    box-shadow: none;
+  }
+
+  #menu {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+  }
+
+  #menu li {
+    margin-bottom: 0;
+  }
 }
