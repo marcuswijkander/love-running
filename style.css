@@ -1,7 +1,7 @@
 /* === GOOGLE FONTS === */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Oswald:wght@400&display=swap');
 
-/* === BASE === */
+/* === BASE STYLES === */
 body {
   font-family: 'Lato', sans-serif;
   color: #3a3a3a;
@@ -12,7 +12,7 @@ body {
 /* === HEADER === */
 header {
   background-color: #ffffff;
-  padding: 10px 20px;
+  padding: 0 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,46 +30,45 @@ header {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #252525;
-  margin: 0;
-  text-align: center;
+  margin: 10px 0;
 }
 
-/* Centrera länken i headern */
-header > a {
-  text-decoration: none;
-  color: inherit;
-  flex-grow: 1;
-  text-align: center;
-}
-
-/* === HAMBURGER CHECKBOX === */
+/* === HIDING CHECKBOX === */
 #nav-toggle {
-  position: absolute;
-  opacity: 0;
-  z-index: -1; /* Ta bort från klickytan */
+  display: none;
 }
 
+/* === MENU TOGGLE LABEL (☰) === */
+.nav-toggle-label {
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+  color: #252525;
+  padding: 10px;
+}
 
 /* === NAV MENU === */
 nav {
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
   background-color: #ffffff;
+  width: 100%;
+  left: 0;
+  top: 100%;
   box-shadow: 0 2px 4px #3a3a3a;
   display: none;
   text-align: center;
 }
 
 #menu {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
   margin: 0;
+  font-size: 110%;
+  letter-spacing: 1px;
 }
 
 #menu li {
-  margin: 1em 0;
+  margin-bottom: 1em;
 }
 
 #menu a {
@@ -82,51 +81,80 @@ nav {
   border-bottom: 1px solid #3a3a3a;
 }
 
-/* Visa meny när box är checked */
+/* === WHEN CHECKED, SHOW MENU === */
 #nav-toggle:checked ~ nav {
   display: block;
 }
 
-/* === MAIN === */
+/* === MAIN CONTENT === */
 main {
-  margin-top: 90px;
-  text-align: center;
+  margin-top: 80px; /* Under headern */
   padding: 20px;
+  text-align: center;
 }
 
 /* === FOOTER === */
-footer {
+#social-networks {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0;
   text-align: center;
-  padding: 20px;
-  background-color: #f5f5f5;
-  margin-top: 40px;
 }
 
-/* === DESKTOP === */
+#social-networks li {
+  margin: 0 15px;
+}
+
+#social-networks i {
+  font-size: 160%;
+  color: #3a3a3a;
+  transition: 0.3s;
+}
+
+#social-networks i:hover {
+  color: #252525;
+  transform: scale(1.1);
+}
+
+/* === RESPONSIVE: TABLET === */
 @media screen and (min-width: 768px) {
-  .nav-toggle-label {
-    display: none;
-  }
-
-  header {
-    flex-direction: column;
-  }
-
   nav {
-    position: static;
     display: block;
+    position: relative;
     box-shadow: none;
-    background: none;
+    width: auto;
+    padding-right: 20px;
   }
 
   #menu {
     display: flex;
-    justify-content: center;
-    gap: 2em;
   }
 
   #menu li {
-    margin: 0;
+    margin: 0 1em;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  #logo {
+    font-size: 280%;
+    line-height: 75px;
+    margin: 0 0.5rem;
+  }
+
+  main {
+    margin-top: 90px;
   }
 }
 
+/* === RESPONSIVE: DESKTOP (hover-effekt) === */
+@media screen and (min-width: 992px) {
+  #menu a:hover {
+    border-bottom: 1px solid #3a3a3a;
+  }
+}
