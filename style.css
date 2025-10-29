@@ -39,7 +39,7 @@ header > a {
   grid-column: 2;
   justify-self: center;
   text-align: center;
-  text-decoration: none; /* ta bort länkstil */
+  text-decoration: none;
   color: inherit;
 }
 
@@ -55,17 +55,17 @@ header > a {
   user-select: none;
   color: #252525;
   padding: 10px;
-  grid-column: 1; /* placera i första kolumnen */
+  grid-column: 1;
   justify-self: start;
 }
 
 /* === NAV MENU === */
 nav {
   position: absolute;
-  background-color: #ffffff;
-  width: 100%;
-  left: 0;
   top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
   box-shadow: 0 2px 4px #3a3a3a;
   display: none;
   text-align: center;
@@ -119,26 +119,34 @@ a:hover {
   transition: 0.3s;
 }
 
-/* === OPTIONAL: SMALLER SCREENS === */
+/* === DESKTOP VIEW === */
 @media screen and (min-width: 768px) {
-  /* Desktop: visa meny alltid */
+  /* Dölj hamburgarikonen */
   .nav-toggle-label {
     display: none;
   }
 
+  /* Visa meny i linje */
   nav {
     position: static;
-    display: block;
+    display: flex;
+    justify-content: center;
     box-shadow: none;
+    background: none;
   }
 
   #menu {
     display: flex;
     justify-content: center;
     gap: 2em;
+    align-items: center;
   }
 
   #menu li {
     margin-bottom: 0;
+  }
+
+  #menu a.active {
+    border-bottom: 2px solid #3a3a3a;
   }
 }
