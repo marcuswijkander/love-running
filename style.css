@@ -1,4 +1,4 @@
-/* Google Fonts import (om inte redan i HTML) */
+/* === GOOGLE FONTS === */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Oswald:wght@400&display=swap');
 
 /* === BASE STYLES === */
@@ -12,40 +12,61 @@ body {
 /* === HEADER === */
 header {
   background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 20px; /* space on sides */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99; /* keep it on top */
+  box-shadow: 0 2px 4px #3a3a3a;
 }
 
-/* Logo */
+/* === LOGO === */
 #logo {
   font-family: 'Oswald', sans-serif;
-  letter-spacing: 2px;
   text-transform: uppercase;
+  letter-spacing: 2px;
   color: #252525;
   margin: 0;
+  padding: 10px 0;
+  text-align: center;
 }
 
-/* === NAVIGATION === */
+/* === HEADER LINKS === */
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === MENU === */
 #menu {
   list-style-type: none;
   padding: 0;
-  margin: 20px 0 0 0;
+  margin: 0;
+  font-size: 110%;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 #menu li {
-  margin: 10px 0;
+  margin-bottom: 1em;
 }
 
 #menu a {
   text-decoration: none;
   color: #252525;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
 #menu a.active {
-  color: #ff7b00;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+/* === MAIN === */
+main {
+  margin-top: 100px; /* push down content under fixed header */
+  padding: 20px;
+  text-align: center;
 }
 
 /* === FOOTER === */
