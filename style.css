@@ -42,18 +42,13 @@ header > a {
   text-align: center;
 }
 
-/* === HAMBURGER === */
+/* === HAMBURGER CHECKBOX === */
 #nav-toggle {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  z-index: -1; /* Ta bort från klickytan */
 }
 
-.nav-toggle-label {
-  font-size: 1.8rem;
-  cursor: pointer;
-  user-select: none;
-  color: #252525;
-  padding: 10px;
-}
 
 /* === NAV MENU === */
 nav {
