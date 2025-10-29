@@ -1,7 +1,7 @@
 /* === GOOGLE FONTS === */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Oswald:wght@400&display=swap');
 
-/* === BASE === */
+/* === BAS === */
 * { box-sizing: border-box; }
 body {
   font-family: 'Lato', sans-serif;
@@ -9,22 +9,21 @@ body {
   margin: 0;
 }
 
-/* === HEADER (MOBILE FIRST) ===
-   Grid för att centrera loggan och lägga ☰ till höger */
+/* === HEADER (MOBILE FIRST) === */
 header {
   position: fixed;
   top: 0; left: 0; width: 100%;
   z-index: 99;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,.1);
-  padding: 8px 16px;
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* vänster | LOGO | höger(☰) */
+  grid-template-columns: 1fr auto 1fr; /* vänster | logga | höger (☰) */
   align-items: center;
+  padding: 10px 16px;
 }
 
-/* Logga centrerad */
-header > a {
+/* Loggan centrerad */
+header a {
   grid-column: 2;
   justify-self: center;
   text-decoration: none;
@@ -38,7 +37,7 @@ header > a {
   margin: 0;
 }
 
-/* Dold checkbox – får inte blockera klick */
+/* Dold checkbox */
 #nav-toggle {
   position: absolute;
   opacity: 0;
@@ -46,112 +45,111 @@ header > a {
   z-index: -1;
 }
 
-/* ☰-knapp till höger */
+/* ☰ till höger */
 .nav-toggle-label {
   grid-column: 3;
   justify-self: end;
   font-size: 1.8rem;
-  line-height: 1;
-  color: #252525;
   cursor: pointer;
-  padding: 6px 8px;
-  user-select: none;
+  color: #252525;
 }
 
-/* NAV: dropdown under headern */
+/* NAV dropdown */
 nav {
   position: absolute;
-  top: 100%;    /* direkt under headern */
+  top: 100%;
   left: 0;
   width: 100%;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,.1);
-  display: none;        /* dold som default på mobil */
+  display: none;
   text-align: center;
 }
 
 #menu {
   list-style: none;
-  margin: 12px 0;
+  margin: 10px 0;
   padding: 0;
   font-size: 110%;
   letter-spacing: 1px;
 }
-#menu li { margin: 0 0 12px; }
+#menu li { margin-bottom: 1em; }
 #menu a {
   text-decoration: none;
   color: #252525;
-  font-weight: 700;
-  padding: 6px 10px;
+  font-weight: bold;
 }
 #menu a.active { border-bottom: 1px solid #3a3a3a; }
 
-/* Visa menyn när checkboxen är ikryssad */
+/* När menyn är öppen */
 #nav-toggle:checked ~ nav { display: block; }
 
-/* MAIN under headern */
+/* MAIN */
 main {
-  margin-top: 84px; /* plats för fixed header */
+  margin-top: 80px;
   padding: 20px;
   text-align: center;
 }
 
-/* FOOTER med ikoner */
+/* === FOOTER === */
 #social-networks {
   list-style: none;
-  margin: 0;
-  padding: 20px 0;
-  background: #f9f9f9;
   display: flex;
   justify-content: center;
-  gap: 24px;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0;
+  background-color: #f9f9f9;
 }
+#social-networks li { margin: 0 15px; }
 #social-networks i {
   font-size: 160%;
   color: #3a3a3a;
-  transition: transform .2s ease, color .2s ease, opacity .2s ease;
+  transition: 0.3s;
 }
 #social-networks i:hover {
   color: #252525;
   transform: scale(1.15);
-  opacity: .9;
 }
 
-/* === TABLET & UPP (≥768px) ===
-   Visa horisontell meny, göm ☰ */
-@media (min-width: 768px) {
-  /* Header i rad: logga vänster, meny höger */
+/* === TABLET (≥768px) === */
+@media screen and (min-width: 768px) {
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 24px;
   }
-  .nav-toggle-label { display: none; }  /* ingen ☰ */
+
+  .nav-toggle-label { display: none; }
+
   nav {
-    position: static;       /* tillbaka in i headern */
-    display: block;         /* alltid synlig */
+    display: block;
+    position: static;
     box-shadow: none;
-    background: transparent;
+    width: auto;
   }
+
   #menu {
     display: flex;
-    align-items: center;
-    gap: 24px;
+    gap: 1.5em;
     margin: 0;
   }
+
   #menu li { margin: 0; }
+
   #logo {
     font-size: 220%;
   }
+
   main { margin-top: 90px; }
 }
 
 /* === DESKTOP (≥992px) === */
-@media (min-width: 992px) {
-  #menu a:hover { border-bottom: 1px solid #3a3a3a; }
+@media screen and (min-width: 992px) {
+  #menu a:hover {
+    border-bottom: 1px solid #3a3a3a;
+  }
   #logo { font-size: 280%; line-height: 75px; }
-  main { margin-top: 96px; }
+  main { margin-top: 100px; }
 }
-
-/* Små UX-förbättringar */
-a:hover { opacity: 0.85; transition: opacity .2s ease; }
