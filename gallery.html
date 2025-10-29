@@ -4,13 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Love Running | Gallery</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Oswald:wght@400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <input type="checkbox" id="nav-toggle" name="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <i class="fa-solid fa-bars"></i>
+    </label>
 
     <a href="index.html">
       <h1 id="logo">Love Running</h1>
@@ -26,16 +33,30 @@
   </header>
 
   <main>
-    <h2>Gallery</h2>
-    <p>Check out photos from our latest running events!</p>
+    <h2>Our Running Moments</h2>
+    <p>Check out some of our favorite memories from the Love Running community!</p>
+
+    <section id="gallery">
+      <img src="https://picsum.photos/300/200?random=1" alt="Running photo 1">
+      <img src="https://picsum.photos/300/200?random=2" alt="Running photo 2">
+      <img src="https://picsum.photos/300/200?random=3" alt="Running photo 3">
+      <img src="https://picsum.photos/300/200?random=4" alt="Running photo 4">
+      <img src="https://picsum.photos/300/200?random=5" alt="Running photo 5">
+      <img src="https://picsum.photos/300/200?random=6" alt="Running photo 6">
+    </section>
   </main>
 
   <footer>
-    <p>Follow us on:
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">Twitter</a>
-    </p>
+    <ul id="social-networks">
+      <li><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+      <li><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+    </ul>
   </footer>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a07f8c77c2.js" crossorigin="anonymous"></script>
 </body>
 </html>
+
